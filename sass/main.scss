@@ -1,0 +1,13 @@
+// bases typographie et body
+@import "bases/bases.scss";
+
+// utils
+@import "utils/variables.scss";
+@import "utils/mixin.scss";
+
+// pages html
+@import "pages/home.scss";
+@import "pages/menu.scss";
+
+// layouts
+@import "layouts/footer.scss";
