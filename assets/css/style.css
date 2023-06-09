@@ -335,6 +335,23 @@ body {
   font-weight: 400;
   padding: 32px 5px 0;
 }
+.menu-main .content-menu .title-main .fa-solid {
+  margin-left: 24px;
+  cursor: pointer;
+  font-size: 22px;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+  transition: transform 0.3s ease-in;
+  transform: scale(1);
+}
+.menu-main .content-menu .title-main .fa-solid:hover {
+  transform: scale(1.1);
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-text-stroke: white;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 .menu-main .item-menu {
   margin-top: 40px;
 }
@@ -374,17 +391,7 @@ body {
   justify-content: center;
   padding: 0 15px;
   overflow: hidden;
-  animation: menuFadeIn 0.6s ease-in-out;
-  animation-delay: 0;
-}
-.menu-main .item-menu .list-menu li:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.menu-main .item-menu .list-menu li:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.menu-main .item-menu .list-menu li:nth-child(4) {
-  animation-delay: 0.9s;
+  opacity: 0;
 }
 .menu-main .item-menu .list-menu li:hover .select {
   transform: translateX(0%);
@@ -397,6 +404,38 @@ body {
 .menu-main .item-menu .list-menu li:hover .price {
   transform: translateX(-59px);
   transform-origin: left;
+}
+.menu-main .item-menu .list-menu .animation-entree {
+  animation: entreeFadeIn 0.6s ease-in-out forwards;
+}
+.menu-main .item-menu .list-menu .animation-entree:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.menu-main .item-menu .list-menu .animation-entree:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.menu-main .item-menu .list-menu .animation-entree:nth-child(4) {
+  animation-delay: 0.9s;
+}
+.menu-main .item-menu .list-menu .animation-plat {
+  animation: platFadeIn 0.6s ease-in-out forwards;
+  animation-delay: 0.9s;
+}
+.menu-main .item-menu .list-menu .animation-plat:nth-child(2) {
+  animation-delay: 1.2s;
+}
+.menu-main .item-menu .list-menu .animation-plat:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.menu-main .item-menu .list-menu .animation-dessert {
+  animation: dessertFadeIn 0.6s ease-in-out forwards;
+  animation-delay: 1.8s;
+}
+.menu-main .item-menu .list-menu .animation-dessert:nth-child(2) {
+  animation-delay: 2.1s;
+}
+.menu-main .item-menu .list-menu .animation-dessert:nth-child(3) {
+  animation-delay: 2.4s;
 }
 .menu-main .item-menu .list-menu .price {
   transition: transform 0.4s ease-in-out;
@@ -488,7 +527,27 @@ body {
     text-align: center;
   }
 }
-@keyframes menuFadeIn {
+@keyframes entreeFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes platFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes dessertFadeIn {
   0% {
     opacity: 0;
     transform: translateX(-20%);
@@ -503,8 +562,10 @@ body {
   position: fixed;
   min-height: 100vh;
   width: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   z-index: 10;
   animation: loadingFadeIn 3s ease-out forwards;
@@ -541,6 +602,18 @@ body {
 .loading .loading__logo--letter:nth-child(8) {
   animation-delay: 1.05s;
 }
+.loading .loading__progress {
+  width: 70vw;
+  height: 15px;
+  border: 2px solid white;
+}
+.loading .loading__progress--bar {
+  animation: barFadeIn 2s cubic-bezier(0.32, 0, 0.07, 1) forwards;
+  transform-origin: left;
+  background: #67d8bc;
+  width: 100%;
+  height: 100%;
+}
 
 @keyframes loadingFadeIn {
   80% {
@@ -557,6 +630,14 @@ body {
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes barFadeIn {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
   }
 }
 .footer {
