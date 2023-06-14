@@ -1,19 +1,19 @@
 .footer{
     padding: 22px 25px;
     background: $color-dark-grey;
-    color: white;
-    .logo{
+    color: $color-white;
+    .footer__logo{
         font-family: 'Shrikhand', cursive;
         font-weight: 400;
     }
-    .social{
+    .footer__social{
         margin-top: 16px;
         list-style: none;
-        .object{
+        &--object{
             display: flex;
             gap: 10px;
         }
-        li{
+        &--item{
             cursor: pointer;
             font-size: 16px;
             margin-top: 7px;
@@ -23,7 +23,7 @@
         }
         a{
             text-decoration: none;
-            color: white;
+            color: $color-white;
         }
     }
 }
@@ -34,7 +34,7 @@
         display: flex;
         flex-direction: row-reverse;
         justify-content: end;
-        .social{
+        .footer__social{
             margin-top: 0;
             display: flex;
             gap: 20px;

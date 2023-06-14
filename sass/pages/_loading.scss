@@ -18,7 +18,7 @@
             animation-iteration-count: 3;
             font-size: 8vw;
             font-weight: 400;
-            color: white;
+            color: $color-white;
             &:nth-child(2){
                 animation-delay: .15s;
             }
@@ -45,11 +45,11 @@
     .loading__progress{
         width: 70vw;
         height: 15px;
-        border: 2px solid white;
+        border: 2px solid $color-white;
         &--bar{
             animation: barFadeIn 2s cubic-bezier(.32,0,.07,1) forwards;
             transform-origin: left;
-            background: #67d8bc;
+            background: $color-loader;
             width: 100%;
             height: 100%;
         }
