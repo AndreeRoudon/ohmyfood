@@ -2,6 +2,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
+// Entête de la page d'accueil -> logo + localisation + intro
 .home-header {
     display: flex;
     flex-direction: column;
@@ -49,32 +50,13 @@
         }
 
         &--btn {
-            cursor: pointer;
-            background: $color-gradient;
-            box-shadow: 0px 4px 10px $color-black-opacity;
-            border-radius: 25px;
-            border: none;
-            color: $color-white;
             padding: 13px 18.75px;
-            font-size: 16px;
-            font-weight: 500;
-            transform-origin: center;
-            transform: scale(1);
-            transition: transform 0.15s ease-in-out;
-
-            &:hover {
-                background: $color-gradient-hover;
-                box-shadow: 0px 6px 12px $color-black-opacity-hover;
-            }
-
-            &:active {
-                transform: scale(0.95);
-                transform-origin: center;
-            }
+            @include btn-gradient;
         }
     }
 }
 
+// Fonctionnement du service en ligne
 .fonctionnement {
     padding: 48px 20px 68px;
 
@@ -127,6 +109,7 @@
     }
 }
 
+// Restaurants item -> img + text
 .restaurants {
     background-color: $color-light-grey;
     padding: 54px 20px 66px;
@@ -168,24 +151,10 @@
             padding: 16px 0 12px 13px;
 
             .fa-solid {
-                cursor: pointer;
                 position: absolute;
                 right: 33px;
                 top: 23px;
-                font-size: 22px;
-                color: transparent;
-                -webkit-text-stroke: 2px $color-black;
-                transition: transform .3s ease-in;
-                transform: scale(1);
-
-                &:hover {
-                    transform: scale(1.1);
-                    background: $color-gradient;
-                    -webkit-text-stroke: $color-white;
-                    color: transparent;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                }
+                @include heart;
             }
         }
 
@@ -220,6 +189,7 @@
     }
 }
 
+// Taille d'écran en version desktop et tablette
 @media screen and (min-width: 767px) {
     .home-header {
         .home-header__logo {
