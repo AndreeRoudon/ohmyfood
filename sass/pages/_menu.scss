@@ -1,65 +1,14 @@
-.container-menu {
-    font-family: 'Roboto', sans-serif;
-}
+// Fond image pour chaque restaurants
+.fond {
+    position: relative;
+    height: 225px;
 
-// Entête des restaurants -> logo + img 
-.menu-header {
-    .menu-header__nav {
-        position: relative;
-        display: grid;
-        place-items: center;
-        gap: 64px;
-        box-shadow: 0px 2px 4px $color-black-opacity;
-
-        &--arrow {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            left: 23px;
-            width: 17px;
-            height: 2px;
-            background-color: $color-black;
-            cursor: pointer;
-            transform-origin: center;
-            transition: transform .3s ease-out;
-
-            &:hover {
-                transform: rotate(1turn);
-                transform-origin: center;
-            }
-
-            &:before {
-                content: '';
-                position: absolute;
-                border-top: 2px solid $color-black;
-                border-left: 2px solid $color-black;
-                width: 8px;
-                height: 8px;
-                transform: rotate(-45deg);
-            }
-        }
-    }
-
-    .menu-header__logo {
-        padding: 14px 0 5px;
-
-        &--img {
-            height: auto;
-            width: 167px;
-        }
-    }
-
-    .menu-header__fond {
-        position: relative;
-        height: 225px;
-        &--img {
-            position: absolute;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
-            height: 275px;
-        }
+    &__img {
+        position: absolute;
+        background-size: cover;
+        background-position: 0% 60%;
+        width: 100%;
+        height: 275px;
     }
 }
 
@@ -155,12 +104,15 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+                    width: 100%;
                 }
 
                 &--parag {
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    flex-grow: 1;
+                    width: 100%;
                 }
 
                 &--select {
@@ -186,7 +138,16 @@
                     }
                 }
 
+                // Au survol du selector 
                 &:hover {
+                    .menu-element__list__item--parag {
+                        flex-grow: initial;
+                        width: calc(100% - 82px);
+                    }
+
+                    .menu-element__list__item--title {
+                        width: 80%;
+                    }
 
                     .menu-element__list__item--select {
                         transform: translateX(0%);
@@ -266,10 +227,10 @@
 
 // Taille d'écran en version desktop et tablette
 @media screen and (min-width: 767px) {
-    .menu-header__fond {
+    .fond {
         height: 342px;
 
-        &--img {
+        &__img {
             height: 375px;
         }
     }
